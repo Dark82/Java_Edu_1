@@ -1,7 +1,7 @@
 public class Zipper {
     public static void main(String[] args) {
         // read source data
-        String source = "A".repeat(180) + "B".repeat(30) + "C".repeat(50);
+        String source = "A".repeat(180) + "1".repeat(30) + "C".repeat(50);
         System.out.println("Source text:   " + source);
 
         // processing
@@ -47,9 +47,8 @@ public class Zipper {
                 }
             } else {
                 result.append(String.valueOf(prev).repeat(Integer.parseInt(number.toString())));
-                prev = zipped.charAt(i + 1);
+                prev = zipped.charAt(++i);
                 number.setLength(0);
-                i++;
             }
         }
         return result.toString();
